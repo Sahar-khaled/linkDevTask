@@ -1,63 +1,113 @@
-<!-- Start foundation services -->
-<div class="background">
-  <section class="container p-5">
-    <div class="container text-center p-5 text-light">
-      <h1>How we have helped</h1>
-      <p>See how Al Foundation have promoted change locally and to the world</p>
-    </div>
+<!-- Start News Listing  -->
 
-    <div class="row justify-content-center">
-      <div class="col-lg-4 col-md-3 col-sm-12 img-container">
-        <img
-          class="menu-img navbar-toggler-icon"
-          src="../../assets/img/Component 99 – 1.png"
-          alt="Menu image"
-        />
+<section class="news">
+  <div class="container">
+    <div class="mb-3">
+      <span class="main-color">Home</span>
+      <span>
+        <i class="bx bx-chevron-right bg-arrow mx-1"></i>
+        <span>News</span>
+      </span>
+    </div>
+    <div class="latest mb-5">
+      <h1>News</h1>
+    </div>
+    <div class="row d-flex align-items-center justify-content-center mb-3">
+      <div class="col-lg-2 col-md-3 col-sm-12">
+        <label for="" class="mb-3">From</label>
+        <input type="text" class="form-control" placeholder="First name" />
       </div>
-      <div class="col-lg-4 col-md-3 col-sm-12 img-container">
-        <img
-          class="menu-img navbar-toggler-icon"
-          src="../../assets/img/Component 99 – 2.png"
-          alt="Menu image"
-        />
+      <div class="col-lg-2 col-md-3 col-sm-12">
+        <label for="" class="mb-3">To</label>
+
+        <input type="text" class="form-control" placeholder="Last name" />
       </div>
-      <div class="col-lg-4 col-md-3 col-sm-12 img-container">
-        <img
-          class="menu-img navbar-toggler-icon"
-          src="../../assets/img/Component 99 – 3.png"
-          alt="Menu image"
-        />
+      <div class="col-lg-2 col-md-3 col-sm-12">
+        <label for="" class="mb-3">Category</label>
+
+        <select class="form-control">
+          <option>Small select</option>
+        </select>
       </div>
-      <div class="col-lg-4 col-md-3 col-sm-12 img-container">
-        <img
-          class="menu-img navbar-toggler-icon"
-          src="../../assets/img/Component 99 – 9.png"
-          alt="Menu image"
-        />
+      <div class="col-lg-5 col-md-3 col-sm-12">
+        <label for="" class="mb-3 text-light"> search</label>
+
+        <div class="input-group d-flex align-items-center">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search Services "
+          />
+
+          <div class="input-group-prepend d-flex align-items-center">
+            <button type="button" class="btn color">
+              <span class="text-10">
+                <i class="bx bx-search bx-xs text-light"></i
+              ></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-1">
+        <button type="button" class="btn btn-view"><span>Sort By</span></button>
+        <i class="bx bxs-chevron-right bg-arrow"></i>
       </div>
     </div>
-    <div class="row justify-content-center service">
-      <div class="col-lg-4 col-md-3 col-sm-12 img-container">
-        <img
-          class="menu-img navbar-toggler-icon"
-          src="../../assets/img/Component 99 – 7.png"
-          alt="Menu image"
-        />
+    <div class="d-flex justify-content-between mb-3">
+      <div class="latest">
+        <h1>Latest News</h1>
       </div>
-      <div class="col-lg-4 col-md-3 col-sm-12 img-container">
-        <img
-          class="menu-img navbar-toggler-icon"
-          src="../../assets/img/Component 99 – 8.png"
-          alt="Menu image"
-        />
-      </div>
-      <div class="col-lg-4 col-md-3 col-sm-12 img-container">
-        <img
-          class="menu-img navbar-toggler-icon"
-          src="../../assets/img/Component 99 – 6.png"
-          alt="Menu image"
-        />
+      <div class="button d-flex align-items-center">
+        <!-- </button> -->
       </div>
     </div>
-  </section>
-</div>
+    <div class="row d-flex justify-content-between">
+      <div
+        *ngFor="let item of latestArticles"
+        class="col-md-3 col-lg-4 sm-12 mb-5"
+      >
+        <div class="card h-100">
+          <div class="img">
+            <img
+              class="menu-img w-100 h-100"
+              [src]="item.urlToImage"
+              alt="Latest News"
+            />
+          </div>
+
+          <div class="d-flex justify-content-end p-1 mt-3">
+            <i class="bx bx-heart latest-icon"></i>
+            <i class="bx bx-share-alt latest-icon"></i>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title mb-3">{{ item.title }}</h5>
+
+            <div class="new-btn mb-3">
+              <button type="button " class="btn news-btn">News</button>
+            </div>
+
+            <p class="card-text mb-3">
+              {{ item.description }}
+            </p>
+
+            <div class="d-flex justify-content-between">
+              <i class="bx bx-calendar-exclamation latest-icon"></i>
+              {{ item.publishedAt | date: "fullDate" }}
+              <!-- - {{ item.showOnHomepage }} -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ul>
+    <li
+      *ngFor="
+        let item of collection | paginate: { itemsPerPage: 3, currentPage: p }
+      "
+    ></li>
+  </ul>
+
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</section>

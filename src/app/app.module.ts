@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { ServicesComponent } from './services/services.component';
 import { LatestNewsComponent } from './latest-news/latest-news.component';
 import { NewsComponent } from './news/news.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,10 @@ import { NewsComponent } from './news/news.component';
     HomeComponent,
     ServicesComponent,
     LatestNewsComponent,
-    NewsComponent
+    NewsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, NgxPaginationModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

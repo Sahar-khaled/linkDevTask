@@ -1,0 +1,17 @@
+.footer-color {
+  background-color: #d9d9d9 !important;
+}
+.input-group .btn {
+  height: 48px;
+  width: 95px;
+  font-size: 13px;
+}
+.email {
+  background-color: #eae3e3 !important;
+}
+.bx-fw {
+  margin-right: 10px !important;
+}
+.link-color {
+  color: #6c757d !important ;
+}

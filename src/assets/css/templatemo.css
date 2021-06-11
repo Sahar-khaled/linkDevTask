@@ -46,12 +46,27 @@ a {
   background-color: #8dc043;
   color: #fff;
 }
-
-.input-group .btn {
-  height: 48px;
-  width: 95px;
-  font-size: 13px;
+.main-color {
+  color: #058997;
 }
+
+.btn-view {
+  color: #8dc043;
+}
+.latest-icon {
+  color: #8dc043;
+  margin-right: 10px;
+}
+.news-btn {
+  background-color: #f2f2f2;
+}
+.img {
+  height: 300px;
+}
+.card-title {
+  height: 100px;
+}
+
 .typo-space-line::after,
 .typo-space-line-center::after {
   content: "";
