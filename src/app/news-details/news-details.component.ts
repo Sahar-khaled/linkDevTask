@@ -10,7 +10,7 @@ import link from '../_files/link.json';
 })
 export class NewsDetailsComponent implements OnInit {
   newId: number;
-
+  sourceName: string;
   article: {
     id: number;
     sourceID: number;
@@ -21,6 +21,11 @@ export class NewsDetailsComponent implements OnInit {
     publishedAt: string;
     content: string;
   } = {} as any;
+
+  categories: {
+    id: number;
+    name: string;
+  }[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -33,5 +38,9 @@ export class NewsDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.article = this.service.getNewDetails(this.newId);
+    this.categories = this.service.getCategory();
+    this.sourceName = this.categories.find(
+      (x) => x.id === this.article.sourceID
+    ).name;
   }
 }

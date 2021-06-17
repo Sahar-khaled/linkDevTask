@@ -53,12 +53,10 @@
             <div class="new-btn mb-3">
               <button type="button " class="btn news-btn">News</button>
             </div>
-            <div *ngIf="item.description" class="text card-text">
+            <div class="text card-text">
               <p class="card-text mb-3">{{ item.description }}</p>
             </div>
-            <container *ngIf="!item.description" class="empty-container mb-5">
-              <p>this item has no description</p>
-            </container>
+
             <div class="d-flex align-items-center">
               <i class="bx bx-calendar-exclamation latest-icon"></i>
               {{ item.publishedAt | date: "fullDate" }}

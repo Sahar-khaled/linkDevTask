@@ -107,11 +107,14 @@ section {
   height: 300px;
 }
 .card-text {
-  height: 200px;
+  height: 150px;
   overflow: hidden;
 }
 .card {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.banner-content {
+  margin-top: 10rem;
 }
 
 .typo-space-line-center::after {
