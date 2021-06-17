@@ -1,5 +1,4 @@
 <!-- Start News Listing  -->
-
 <section class="news">
   <div class="container">
     <div class="mb-3">
@@ -12,102 +11,124 @@
     <div class="latest mb-5">
       <h1>News</h1>
     </div>
-    <div class="row d-flex align-items-center justify-content-center mb-3">
+    <div class="row d-flex align-items-center mb-3">
       <div class="col-lg-2 col-md-3 col-sm-12">
-        <label for="" class="mb-3">From</label>
-        <input type="text" class="form-control" placeholder="First name" />
-      </div>
-      <div class="col-lg-2 col-md-3 col-sm-12">
-        <label for="" class="mb-3">To</label>
+        <label for="" class="mb-1"> From</label>
 
-        <input type="text" class="form-control" placeholder="Last name" />
+        <div class="input-group-prepend d-flex align-items-center">
+          <input
+            type="date"
+            class="form-control input-style"
+            placeholder="From"
+          />
+        </div>
       </div>
       <div class="col-lg-2 col-md-3 col-sm-12">
-        <label for="" class="mb-3">Category</label>
+        <label for="" class="mb-1"> To</label>
 
-        <select class="form-control">
-          <option>Small select</option>
-        </select>
+        <div class="input-group-prepend d-flex align-items-center">
+          <input
+            type="date"
+            class="form-control input-style"
+            placeholder="To"
+          />
+        </div>
       </div>
-      <div class="col-lg-5 col-md-3 col-sm-12">
-        <label for="" class="mb-3 text-light"> search</label>
+      <div class="col-lg-2 col-md-6 col-sm-12">
+        <label for="" class="mb-1">Select</label>
+        <ngx-select-dropdown
+          [options]="categories"
+          (change)="selectionChanged($event.value)"
+          [config]="config"
+        ></ngx-select-dropdown>
+      </div>
+      <div class="col-lg-5 col-md-12 col-sm-12">
+        <label for="" class="mb-1 text-secondary"> search</label>
 
         <div class="input-group d-flex align-items-center">
           <input
+            [(ngModel)]="searchText"
             type="text"
             class="form-control"
-            placeholder="Search Services "
+            placeholder="Search News"
           />
 
           <div class="input-group-prepend d-flex align-items-center">
-            <button type="button" class="btn color">
+            <button type="button" (click)="onSearch()" class="btn color">
               <span class="text-10">
-                <i class="bx bx-search bx-xs text-light"></i
+                <i class="bx bx-search text-light"></i
               ></span>
             </button>
           </div>
         </div>
       </div>
-      <div class="col-lg-1">
-        <button type="button" class="btn btn-view"><span>Sort By</span></button>
-        <i class="bx bxs-chevron-right bg-arrow"></i>
+      <div class="col-md-1">
+        <button type="button" class="btn btn-view">
+          <span>Sort By</span>
+          <span><i class="bx bx-right-arrow-alt bg-arrow"></i></span>
+        </button>
       </div>
-    </div>
-    <div class="d-flex justify-content-between mb-3">
-      <div class="latest">
-        <h1>Latest News</h1>
-      </div>
-      <div class="button d-flex align-items-center">
-        <!-- </button> -->
-      </div>
-    </div>
-    <div class="row d-flex justify-content-between">
-      <div
-        *ngFor="let item of latestArticles"
-        class="col-md-3 col-lg-4 sm-12 mb-5"
-      >
-        <div class="card h-100">
-          <div class="img">
-            <img
-              class="menu-img w-100 h-100"
-              [src]="item.urlToImage"
-              alt="Latest News"
-            />
-          </div>
 
-          <div class="d-flex justify-content-end p-1 mt-3">
-            <i class="bx bx-heart latest-icon"></i>
-            <i class="bx bx-share-alt latest-icon"></i>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title mb-3">{{ item.title }}</h5>
+      <!-- </div> -->
+      <div class="row d-flex">
+        <div
+          *ngFor="
+            let item of latestArticles
+              | paginate: { itemsPerPage: pageSize, currentPage: curPage }
+          "
+          class="col-md-6 col-lg-4 sm-12 mb-5 mt-5"
+        >
+          <a
+            [routerLink]="['/news-details', item.id]"
+            class="
+              service-work
+              border-0
+              text-secondary
+              shadow-sm
+              overflow-hidden
+              mx-5
+              m-sm-0
+            "
+          >
+            <div class="card h-100">
+              <div class="img">
+                <img
+                  class="menu-img w-100 h-100"
+                  [src]="item.urlToImage"
+                  alt="Latest News"
+                />
+              </div>
 
-            <div class="new-btn mb-3">
-              <button type="button " class="btn news-btn">News</button>
+              <div class="d-flex justify-content-end p-1 mt-3">
+                <i class="bx bx-heart latest-icon"></i>
+                <i class="bx bx-share-alt latest-icon"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title mb-3">{{ item.title }}</h5>
+
+                <div class="new-btn mb-3">
+                  <button type="button " class="btn news-btn">News</button>
+                </div>
+
+                <p class="card-text mb-3">
+                  {{ item.description }}
+                </p>
+
+                <div class="d-flex align-items-center">
+                  <i class="bx bx-calendar-exclamation latest-icon"></i>
+                  {{ item.publishedAt | date: "fullDate" }}
+                  <!-- - {{ item.showOnHomepage }} -->
+                </div>
+              </div>
             </div>
-
-            <p class="card-text mb-3">
-              {{ item.description }}
-            </p>
-
-            <div class="d-flex justify-content-between">
-              <i class="bx bx-calendar-exclamation latest-icon"></i>
-              {{ item.publishedAt | date: "fullDate" }}
-              <!-- - {{ item.showOnHomepage }} -->
-            </div>
-          </div>
+          </a>
         </div>
       </div>
     </div>
+
+    <pagination-controls
+      class="d-flex justify-content-center"
+      (pageChange)="curPage = $event"
+    ></pagination-controls>
   </div>
-
-  <ul>
-    <li
-      *ngFor="
-        let item of collection | paginate: { itemsPerPage: 3, currentPage: p }
-      "
-    ></li>
-  </ul>
-
-  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </section>

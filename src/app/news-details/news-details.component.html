@@ -1,0 +1,107 @@
+<!-- Start News Listing  -->
+
+<section class="news-details">
+  <div class="container">
+    <div class="mb-3">
+      <span class="main-color">Home</span>
+      <span>
+        <i class="bx bx-chevron-right bg-arrow mx-1"></i>
+        <span class="main-color">News</span>
+        <i class="bx bx-chevron-right bg-arrow mx-1"></i>
+        <span>News Details</span>
+      </span>
+    </div>
+
+    <div class="d-flex justify-content-between mb-3">
+      <div class="latest">
+        <h1>News Details</h1>
+      </div>
+    </div>
+    <div
+      class="col-md-3 col-lg-4 sm-12 mb-5"
+      class="row row-centered d-flex justify-content-between"
+    >
+      <div class="card-photo h-100 news-item">
+        <div class="img">
+          <img
+            class="menu-img w-100 h-100"
+            [src]="article?.urlToImage"
+            alt="Latest News"
+          />
+        </div>
+
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <h5 class="">{{ article?.title }}</h5>
+            <div class="d-flex justify-content-end">
+              <i class="bx bx-heart latest-icon"></i>
+              <i class="bx bx-share-alt latest-icon"></i>
+            </div>
+          </div>
+
+          <div *ngIf="article?.description" class="text">
+            <p class="card-text mb-3">{{ article?.description }}</p>
+          </div>
+          <container *ngIf="!article?.description" class="empty-container mb-5">
+            <p>this item has no description</p>
+          </container>
+        </div>
+      </div>
+
+      <section>
+        <h1 class="mt-4 mb-4">Related Topics</h1>
+        <div class="c row Related">
+          <div class="card h-100 col-md-3 col-lg-4 col-sm-12">
+            <img class="card-img" src="assets/img/img1.png" alt="Card image" />
+            <div class="card-detail">
+              <span>Category</span><br />
+              <span class="text-style">Technology </span><br />
+              <span class="text-style"> Development Seminar</span>
+
+              <div class="button d-flex align-items-center">
+                <button type="button" class="btn btn-view">
+                  View Details
+
+                  <i class="bx bx-right-arrow-alt bg-arrow"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="card h-100 col-md-3 col-lg-4 col-sm-12">
+            <img class="card-img" src="assets/img/img2.png" alt="Card image" />
+            <div class="card-detail">
+              <span>Category</span><br />
+              <span class="text-style">Technology </span><br />
+              <span class="text-style"> Development Seminar</span>
+
+              <div class="button d-flex align-items-center">
+                <button type="button" class="btn btn-view">
+                  View Details
+
+                  <i class="bx bx-right-arrow-alt bg-arrow"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card h-100 col-md-3 col-lg-4 col-sm-12">
+            <img class="card-img" src="assets/img/img3.png" alt="Card image" />
+            <div class="card-detail">
+              <span>Category</span><br />
+              <span class="text-style">Technology </span><br />
+              <span class="text-style"> Development Seminar</span>
+
+              <div class="button d-flex align-items-center">
+                <button type="button" class="btn btn-view">
+                  View Details
+
+                  <i class="bx bx-right-arrow-alt bg-arrow"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>

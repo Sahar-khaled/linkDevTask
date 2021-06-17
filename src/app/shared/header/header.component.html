@@ -1,24 +1,75 @@
 <!-- Header -->
+
+<div
+  id="mySidenav"
+  [ngClass]="{ w1: openN, w2: !openN }"
+  class="sidenav d-flex"
+>
+  <div
+    class="
+      sidenav-icons
+      text-light
+      mt-5
+      mx-3
+      light-300
+      d-flex
+      flex-column-reverse
+      justify-content-center
+    "
+  >
+    <i class="bx-fw bx bxl-instagram bx-s mt-4"></i>
+    <i class="bx-fw bx bxl-youtube bx-s mt-4"></i>
+    <i class="bx-fw bx bxl-linkedin-square bx-s mt-4"></i>
+
+    <i class="bx-fw bx bxl-facebook bx-s mt-4"></i>
+    <i class="bx-fw bx bxl-twitter bx-s mt-4"></i>
+  </div>
+  <div class="links mt-5">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"></a>
+    <a href="# " class="btn-view">Home</a>
+    <a href="#" class="main-item"
+      >About us
+      <ul class="main-item">
+        <li class="sub">who are us</li>
+        <li class="sub">Why us?</li>
+      </ul>
+    </a>
+    <a
+      >News
+      <ul class="main-item">
+        <li routerLink="../news" class="sub">News</li>
+        <li class="sub">Events</li>
+      </ul>
+    </a>
+
+    <a href="#"
+      >Careers
+      <ul class="main-item">
+        <li class="sub">Opportunities</li>
+      </ul>
+    </a>
+    <a href="#">Contact Us</a>
+    <a href="#">Site Map</a>
+  </div>
+</div>
+
+<!-- Use any element to open the sidenav -->
+
+<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+<!-- <div id="main">...</div> -->
 <nav
   id="main_nav"
   class="navbar navbar-expand-lg navbar-light bg-header shadow"
 >
   <div class="container d-flex justify-content-between align-items-center">
-    <a class="navbar-brand h1" href="index.html">
+    <a class="navbar-brand h1">
       <img
         class="menu-img"
         src="../../../assets/img/Menu.png"
         alt="Menu image"
+        (click)="openNav()"
       />
-      <!-- <div id="main">
-        <button class="openbtn" onclick="openNav()">
-          <img
-            class="menu-img navbar-toggler-icon"
-            src="../../../assets/img/Menu.png"
-            alt="Menu image"
-          />
-        </button>
-      </div> -->
+
       <img
         class="link-img"
         src="../../../assets/img/Link_logo_vertical_color_Light_RGB.png"

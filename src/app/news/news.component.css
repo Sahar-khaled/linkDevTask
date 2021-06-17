@@ -1,3 +1,17 @@
 .news {
   padding: 150px 0 150px 0;
 }
+* a {
+  text-decoration: none;
+}
+.input-style {
+  height: 50px;
+}
+
+/* .btn {
+  border-radius: initial !important;
+  border: 1px solid #ddd !important;
+} */
+/* .latest-icon {
+  margin-right: 0 !important;
+} */

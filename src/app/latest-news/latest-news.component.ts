@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MainServiceService } from '../service/main-service.service';
 import link from '../_files/link.json';
 
 @Component({
@@ -8,17 +9,6 @@ import link from '../_files/link.json';
   styleUrls: ['./latest-news.component.css'],
 })
 export class LatestNewsComponent implements OnInit {
-  articlesList: {
-    id: number;
-    sourceID: number;
-    showOnHomepage: boolean;
-    title: string;
-    description: string;
-    urlToImage: string;
-    publishedAt: string;
-    content: string;
-  }[] = [];
-
   public latestArticles: {
     id: number;
     sourceID: number;
@@ -30,19 +20,9 @@ export class LatestNewsComponent implements OnInit {
     content: string;
   }[] = [];
 
-  constructor() {}
-  // btnClick = function () {
-  //   this.router.navigateByUrl('../news');
-  // };
+  constructor(private service: MainServiceService) {}
 
   ngOnInit(): void {
-    this.articlesList = link.articles;
-    this.latestArticles = this.articlesList
-      .sort(
-        (a, b) =>
-          0 - (new Date(a.publishedAt) > new Date(b.publishedAt) ? 1 : -1)
-      )
-      .filter((x) => x.showOnHomepage === true)
-      .slice(0, 6);
+    this.latestArticles = this.service.getLatest();
   }
 }

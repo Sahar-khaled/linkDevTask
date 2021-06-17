@@ -46,13 +46,43 @@ a {
   background-color: #8dc043;
   color: #fff;
 }
+.color:focus {
+  box-shadow: none;
+}
+section {
+  background-color: #efefef;
+}
+.color:hover {
+  color: #8dc043;
+  background-color: #fff;
+}
+.ngx-pagination li {
+  margin: 5px !important;
+}
+.ngx-pagination .current {
+  background-color: #8dc043 !important;
+}
+
 .main-color {
   color: #058997;
 }
-
-.btn-view {
+.bx-right-arrow-alt {
   color: #8dc043;
 }
+.main-item {
+  padding: 0;
+}
+
+.btn-view {
+  color: #8dc043 !important;
+}
+.bx-fw {
+  cursor: pointer;
+}
+.links a:hover {
+  color: #8dc043 !important;
+}
+
 .latest-icon {
   color: #8dc043;
   margin-right: 10px;
@@ -60,11 +90,29 @@ a {
 .news-btn {
   background-color: #f2f2f2;
 }
+.ngx-dropdown-button {
+  height: 50px;
+}
+.input-group:not(.has-validation) > .dropdown-toggle:nth-last-child(n + 3),
+.input-group:not(.has-validation)
+  > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu) {
+  height: 50px;
+}
+.input-group .btn {
+  height: 50px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  width: 70px;
+}
 .img {
   height: 300px;
 }
-.card-title {
-  height: 100px;
+.card-text {
+  height: 200px;
+  overflow: hidden;
+}
+.card {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .typo-space-line::after,
@@ -83,6 +131,9 @@ a {
 /* Main Nav */
 #main_nav .nav-item .nav-link:hover {
   color: #fff;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
 }
 .sidebar {
   height: 100%;
@@ -167,15 +218,29 @@ a {
 /* #index_banner .carousel-inner {
   height: 80vh;
 } */
+.carousel-indicators {
+  z-index: 0;
+}
+
 #index_banner .carousel-indicators li,
 #index_banner .carousel-indicators.active {
   background-color: #fff !important;
-}
-/* .carousel-indicators {
-  border-radius: 50% !important;
   width: 10px;
   height: 10px;
-} */
+  border-radius: 50%;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(50%);
+}
+.form-control:focus {
+  border: none;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  z-index: 0;
+}
 .service-wrapper .service-footer {
   max-width: 720px;
 }
@@ -344,4 +409,23 @@ a {
 footer a.text-light:hover {
   color: #bfbfbf !important;
   transition-duration: 0.15s;
+}
+@media (max-width: 860px) {
+  .nav-link {
+    padding: 0;
+  }
+  .card-detail {
+    width: 80% !important;
+  }
+  .news-details {
+    padding: 150px 10px 50px 10px !important;
+  }
+  .service {
+    bottom: 0;
+  }
+}
+@media only screen and (max-width: 1366px) and (min-width: 1024px) {
+  .service {
+    bottom: 0 !important;
+  }
 }

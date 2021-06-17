@@ -1,60 +1,70 @@
-<!-- <div *ngFor="let item of latestArticles">
-  {{ item.publishedAt | date: "shortDate" }} - {{ item.showOnHomepage }}
-</div> -->
-
-<div class="container p-5">
+<div class="container">
   <div class="d-flex justify-content-between">
-    <div class="latest">
+    <div class="latest mt-3 mb-3">
       <h1>Latest News</h1>
     </div>
     <div class="button d-flex align-items-center">
       <button type="button" routerLink="../news" class="btn btn-view">
         View All
-
-        <i class="fa fa-plus"></i>
       </button>
 
       <!-- </button> -->
-      <i class="bx bx-chevron-right bg-arrow"></i>
+      <i class="bx bx-right-arrow-alt bg-arrow"></i>
     </div>
   </div>
-  <div class="row d-flex justify-content-between">
+
+  <div class="row d-flex service-work">
     <div
       *ngFor="let item of latestArticles"
-      class="col-md-3 col-lg-4 sm-12 mb-5"
+      class="col-md-6 col-lg-4 sm-12 mb-5"
     >
-      <div class="card h-100">
-        <div class="img">
-          <img
-            class="menu-img w-100 h-100"
-            [src]="item.urlToImage"
-            alt="Latest News"
-          />
-        </div>
+      <a
+        [routerLink]="['/news-details', item.id]"
+        class="
+          service-work
+          border-0
+          text-secondary
+          shadow-sm
+          overflow-hidden
+          mx-5
+          m-sm-0
+        "
+      >
+        <div class="card h-100">
+          <div class="img">
+            <img
+              class="menu-img w-100 h-100"
+              [src]="item.urlToImage"
+              alt="Latest News"
+            />
+          </div>
 
-        <div class="d-flex justify-content-end p-1 mt-3">
-          <i class="bx bx-heart latest-icon"></i>
-          <i class="bx bx-share-alt latest-icon"></i>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title mb-3">{{ item.title }}</h5>
+          <div class="d-flex justify-content-end p-1 mt-3">
+            <i class="bx bx-heart latest-icon"></i>
+            <i class="bx bx-share-alt latest-icon"></i>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title mb-3 text-secondary stretched-link">
+              {{ item.title }}
+            </h5>
 
-          <div class="new-btn mb-3">
-            <button type="button " class="btn news-btn">News</button>
-          </div>
-          <div *ngIf="item.description" class="text">
-            <p class="card-text mb-3">{{ item.description }}</p>
-          </div>
-          <container *ngIf="!item.description" class="empty-container mb-5">
-            <p>this item has no description</p>
-          </container>
-          <div class="d-flex justify-content-between">
-            <i class="bx bx-calendar-exclamation latest-icon"></i>
-            {{ item.publishedAt | date: "fullDate" }}
-            <!-- - {{ item.showOnHomepage }} -->
+            <div class="new-btn mb-3">
+              <button type="button " class="btn news-btn">News</button>
+            </div>
+            <div *ngIf="item.description" class="text">
+              <p class="card-text mb-3">{{ item.description }}</p>
+            </div>
+            <container *ngIf="!item.description" class="empty-container mb-5">
+              <p>this item has no description</p>
+            </container>
+            <div class="d-flex align-items-center">
+              <i class="bx bx-calendar-exclamation latest-icon"></i>
+              {{ item.publishedAt | date: "fullDate" }}
+              <!-- - {{ item.showOnHomepage }} -->
+            </div>
           </div>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </div>
