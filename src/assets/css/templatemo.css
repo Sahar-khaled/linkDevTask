@@ -8,9 +8,8 @@ Table of contents
 3. Home
 4. About
 5. Work
-6. Single Work
-7. Pricing
-8. Contact
+5. Contact
+
 --------------------------------------------- */
 
 html {
@@ -115,15 +114,6 @@ section {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.typo-space-line::after,
-.typo-space-line-center::after {
-  content: "";
-  width: 150px;
-  display: block;
-  position: absolute;
-  border-bottom: 5px solid #6266ea;
-  padding-top: 0.5em;
-}
 .typo-space-line-center::after {
   left: 50%;
   margin-left: -75px;
@@ -135,6 +125,7 @@ section {
 .navbar-toggler:focus {
   box-shadow: none;
 }
+
 .sidebar {
   height: 100%;
   width: 0;
@@ -169,33 +160,11 @@ section {
   margin-left: 50px;
 }
 
-.openbtn {
-  font-size: 20px;
-  cursor: pointer;
-  background-color: #111;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-}
-
-.openbtn:hover {
-  background-color: #444;
-}
-
 #main {
   transition: margin-left 0.5s;
   padding: 16px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidebar {
-    padding-top: 15px;
-  }
-  .sidebar a {
-    font-size: 18px;
-  }
-}
 /* Home */
 #index_banner {
   background-image: url("../img/bg.png");
@@ -248,81 +217,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-radius: 10px !important;
   cursor: pointer;
 }
-.service-work .service-work-vertical {
-  background: rgb(0, 0, 0);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0) 33.33%,
-    rgba(255, 255, 255, 1) 66.66%,
-    rgba(255, 255, 255, 0) 99.99%
-  );
-  background-size: 300% 300%;
-  background-position: 0% 100%;
-  transition: 0.5s;
-}
-.service-work .service-work-vertical:hover {
-  background-position: 0% 0%;
-  transition: 0.5s;
-}
-.service-work .service-work-vertical:hover * {
-  color: #000;
-  border-color: #000;
-  transition: 0.5s;
-}
+
 .recent-work.card {
   border-radius: 10px !important;
 }
 
 /* About */
-#work_banner {
-  background-image: url("../img/banner-bg-02.jpg");
-  background-position: center center;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
-}
-.banner-content {
-  margin-top: 100px;
-}
+
 .card-title {
   height: 90px;
   overflow: hidden;
 }
-.progress {
-  height: 8px;
-}
-.objective-icon {
-  border-radius: 13px;
-  width: 8rem;
-}
-.partner-wap {
-  background-color: #7276ec;
-  transition: 1s;
-  cursor: pointer;
-}
-.partner-wap:hover {
-  background-color: #b1b3f5;
-}
-.why-us {
-  background: rgb(239, 239, 253);
-  background: -moz-linear-gradient(
-    0deg,
-    rgba(239, 239, 253, 1) 50%,
-    rgba(255, 255, 255, 1) 50%
-  );
-  background: -webkit-linear-gradient(
-    0deg,
-    rgba(239, 239, 253, 1) 50%,
-    rgba(255, 255, 255, 1) 50%
-  );
-  background: linear-gradient(
-    0deg,
-    rgba(239, 239, 253, 1) 50%,
-    rgba(255, 255, 255, 1) 50%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#efeffd",endColorstr="#ffffff",GradientType=1);
-}
+
 .team-member-img {
   transition-duration: 0.15s;
 }
@@ -332,13 +238,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 /* Work */
 /* Singel Work */
-#work_single_banner {
-  background-image: url("../img/banner-bg-02.jpg");
-  background-position: center center;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
-}
 
 .background {
   background-image: url("../img/banner-bg-02.jpg");
@@ -386,6 +285,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 footer a.text-light:hover {
   color: #bfbfbf !important;
   transition-duration: 0.15s;
+}
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
 }
 @media (max-width: 860px) {
   .nav-link {
