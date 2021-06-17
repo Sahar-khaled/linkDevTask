@@ -57,13 +57,8 @@ export class NewsComponent implements OnInit {
   constructor(private service: MainServiceService) {}
 
   ngOnInit(): void {
-    // this.sourceCategory = link.ssourceCategory;
-
     this.allArticles = this.latestArticles = this.service.getNews();
     this.categories = this.service.getCategory();
-    // this.curPage = 1;
-    // this.pageSize = 20;
-    // this;
   }
   numberOfPages() {
     return Math.ceil(this.products.length / this.pageSize);
@@ -82,23 +77,4 @@ export class NewsComponent implements OnInit {
       x.title.toLowerCase().match(this.searchText.toLowerCase())
     );
   }
-  // onPageChange(pageNo) {
-  //   debugger;
-  //   this.curPage = pageNo;
-  //   let start = this.pageSize * (pageNo - 1);
-  //   let end =
-  //     start + this.pageSize <= this.allArticles.length - 1
-  //       ? start + this.pageSize
-  //       : this.allArticles.length;
-  //   this.latestArticles = this.allArticles.slice(start, end);
-  // }
-  // onChooseStartDate() {
-  //   debugger;
-  //   if (this.startDate) {
-  //     this.latestArticles = this.allArticles.filter(
-  //       (x) =>
-  //         new Date(x.publishedAt).getDate >= new Date(this.startDate).getDate
-  //     );
-  //   }
-  // }
 }
