@@ -1,3 +1,5 @@
+<!-- Start Latest News  -->
+
 <div class="container">
   <div class="d-flex justify-content-between">
     <div class="latest mt-3 mb-3">
@@ -51,7 +53,7 @@
             <div class="new-btn mb-3">
               <button type="button " class="btn news-btn">News</button>
             </div>
-            <div *ngIf="item.description" class="text">
+            <div *ngIf="item.description" class="text card-text">
               <p class="card-text mb-3">{{ item.description }}</p>
             </div>
             <container *ngIf="!item.description" class="empty-container mb-5">
@@ -68,3 +70,4 @@
     </div>
   </div>
 </div>
+<!-- End Latest News  -->

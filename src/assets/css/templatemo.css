@@ -273,33 +273,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .recent-work.card {
   border-radius: 10px !important;
 }
-.recent-work .recent-work-vertical {
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0) 33.333%,
-    rgba(97, 84, 199, 1) 66.666%,
-    rgba(255, 255, 255, 0) 99.999%
-  );
-  background-size: 300% 300%;
-  background-position: 0% 100%;
-  transition: 0.5s;
-  cursor: pointer;
-}
-.recent-work .recent-work-vertical:hover {
-  background-position: 0% 0%;
-  transition: 0.5s;
-}
-.recent-work .recent-work-vertical:hover div.recent-work-content {
-  top: 50%;
-  margin-top: -2.5em;
-  position: absolute;
-}
-.recent-work .recent-work-vertical:hover * {
-  color: white;
-  transition: 0.5s;
-}
+
 /* About */
 #work_banner {
   background-image: url("../img/banner-bg-02.jpg");
@@ -311,7 +285,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .banner-content {
   margin-top: 100px;
 }
-
+.card-title {
+  height: 90px;
+  overflow: hidden;
+}
 .progress {
   height: 8px;
 }
